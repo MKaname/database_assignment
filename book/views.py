@@ -51,8 +51,8 @@ def book_search(request):
         form = SearchForm(request.POST)
         if form.is_valid():    # フォームのバリデーション
             books = Book.objects.filter(
-                page__gte=request.POST['min_page'],
-                page__lte=request.POST['max_page'])
+                page__gte=request.POST['min_number'],
+                page__lte=request.POST['max_number'])
             return render(request,
                           'book/book_search_result.html',     # 使用するテンプレート
                           {'books': books})

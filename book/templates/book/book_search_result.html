@@ -9,8 +9,9 @@
         <tr>
             <th scope="col">ID</th>
             <th scope="col">書籍名</th>
-            <th scope="col">出版社</th>
-            <th scope="col">ページ数</th>
+            <th scope="col">作者</th>
+            <th scope="col">レーベル</th>
+            <th scope="col">巻数</th>
             <th scope="col">操作</th>
         </tr>
     </thead>
@@ -19,8 +20,9 @@
         <tr>
             <th scope="row">{{ book.id }}</th>
             <td>{{ book.name }}</td>
+            <td>{{ book.author }}</td>
             <td>{{ book.publisher }}</td>
-            <td>{{ book.page }}</td>
+            <td>{{ book.number }}</td>
             <td>
                 <a href="{% url 'book:book_mod' book_id=book.id %}" class="btn btn-outline-primary btn-sm">修正</a>
                 <a href="{% url 'book:book_del' book_id=book.id %}" class="btn btn-outline-danger btn-sm">削除</a>

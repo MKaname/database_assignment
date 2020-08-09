@@ -6,11 +6,11 @@ class BookForm(ModelForm):
     """書籍のフォーム"""
     class Meta:
         model = Book
-        fields = ('name', 'publisher', 'page',)
+        fields = ('name', 'author', 'publisher', 'number',)
 
 
 class SearchForm(Form):
     """書籍サーチのフォーム"""
-    min_page = IntegerField(label='最小ページ数', required=False)
+    min_number = IntegerField(label='最小', required=False)
 
-    max_page = IntegerField(label='最大ページ数', required=False)
+    max_number = IntegerField(label='最大', required=False)
