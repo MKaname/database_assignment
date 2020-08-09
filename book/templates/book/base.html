@@ -1,11 +1,13 @@
-{% load i18n static %}
+{% load static %}
+{% load i18n %}
 <!DOCTYPE html>{% get_current_language as LANGUAGE_CODE %}
 <html lang="{{ LANGUAGE_CODE|default:"en-us" }}">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="{% static 'book/css/bootstrap.min.css' %}">
+    <!-    <link rel="stylesheet" type="text/css"  href="./static/book/css/bootstrap.min.css"> 
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
     {% block extra_css %}{% endblock %}
     <title>{% block title %}My books{% endblock %}</title>
 </head>
