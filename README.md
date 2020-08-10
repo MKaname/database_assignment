@@ -8,5 +8,5 @@ database assignment
 5. install pyenv
 6. install django mod-wsgi mod-wsgi-httpd
 7. cd <project directory>
-8. udo ../bin/mod_wsgi-express start-server --port=80 --user=djangowebserver mysite/wsgi.py
+8. sudo ../bin/mod_wsgi-express start-server --port=80 --user=djangowebserver mysite/wsgi.py
 
