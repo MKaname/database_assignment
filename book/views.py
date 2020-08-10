@@ -28,7 +28,7 @@ def book_edit(request, book_id=None):
             book = form.save(commit=False)
             book.save()
             return redirect('book:book_list')
-    else:    # GET の時
+    else:  # GET の時
         form = BookForm(instance=book)  # book インスタンスからフォームを作成
 
     return render(
@@ -51,8 +51,8 @@ def book_search(request):
         form = SearchForm(request.POST)
         if form.is_valid():    # フォームのバリデーション
             books = Book.objects.filter(
-                page__gte=request.POST['min_number'],
-                page__lte=request.POST['max_number'])
+                number__gte=request.POST['min_number'],
+                number__lte=request.POST['max_number'])
             return render(request,
                           'book/book_search_result.html',     # 使用するテンプレート
                           {'books': books})
