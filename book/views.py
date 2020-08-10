@@ -7,7 +7,7 @@ from book.forms import BookForm, SearchForm
 def book_list(request):
     """書籍の一覧"""
     # return HttpResponse('書籍の一覧')
-    books = Book.objects.all().order_by('id')
+    books = Book.objects.all().order_by('number')
     return render(request,
                   'book/book_list.html',     # 使用するテンプレート
                   {'books': books})         # テンプレートに渡すデータ
