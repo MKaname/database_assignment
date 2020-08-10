@@ -7,7 +7,7 @@ database assignment
 4. install httpd httpd-tools httpd-devel httpd-manual
 5. install pyenv
 6. install django mod-wsgi mod-wsgi-httpd
-7. cd <project directory>
+7. cd "project directory"
 8. sudo ../bin/mod_wsgi-express start-server --port=80 --user=djangowebserver mysite/wsgi.py
 
 参考にしたサイト
