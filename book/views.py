@@ -64,16 +64,12 @@ def book_search(request):
                 max_number = '500'
             
             books = Book.objects.filter(
-<<<<<<< HEAD
                 name__icontains = name_req,
                 author__icontains = author_req,
                 publisher__icontains = publisher_req,
                 number__gte=min_number,
                 number__lte=max_number)
 
-=======
-
->>>>>>> 5a0ad4b22dfe1ed70f45aed914f13269fe769023
             return render(request,
                           'book/book_search_result.html',     # 使用するテンプレート
                           {'books': books})
