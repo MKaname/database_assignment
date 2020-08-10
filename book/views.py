@@ -50,25 +50,24 @@ def book_search(request):
         # POST された request データからフォームを作成
         form = SearchForm(request.POST)
         if form.is_valid():    # フォームのバリデーション
-            
+
             min_number = request.POST['min_number']
             max_number = request.POST['max_number']
             name_req = request.POST['name']
             author_req = request.POST['author']
             publisher_req = request.POST['publisher']
 
-
             if request.POST['min_number'] == '':
                 min_number = '0'
             if request.POST['max_number'] == '':
                 max_number = '500'
-            
+
             books = Book.objects.filter(
-                name__icontains = name_req,
-                author__icontains = author_req,
-                publisher__icontains = publisher_req,
+                name__icontains=name_req,
+                author__icontains=author_req,
+                publisher__icontains=publisher_req,
                 number__gte=min_number,
-                number__lte=max_number)
+                number__lte=max_number).order_by("number")
 
             return render(request,
                           'book/book_search_result.html',     # 使用するテンプレート
