@@ -1,3 +1,9 @@
+Python3.6.8
+Django(3.1)
+django-bootstrap4(2.2.0)
+mod-wsgi(4.7.1)
+mod-wsgi-httpd(2.4.41.1)
+
 database assignment  
 **server build**  
 (@sakura-server)
