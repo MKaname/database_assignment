@@ -1,4 +1,4 @@
-from django.forms import ModelForm, Form, IntegerField
+from django.forms import ModelForm, Form, IntegerField, CharField
 from book.models import Book
 
 
@@ -11,6 +11,11 @@ class BookForm(ModelForm):
 
 class SearchForm(Form):
     """書籍サーチのフォーム"""
-    min_number = IntegerField(label='最小', required=False)
+    name = CharField(label = '作品名', required=False)
+    author = CharField(label = '作者', required=False)
+    publisher = CharField(label = 'レーベル', required = False)
 
-    max_number = IntegerField(label='最大', required=False)
+    min_number = IntegerField(label='最小巻数', required=False)
+    max_number = IntegerField(label='最大巻数', required=False)
+
+
